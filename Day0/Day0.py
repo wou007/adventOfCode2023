@@ -6,7 +6,7 @@ def Part1(input):
     result = 0
 
     for line in input.splitlines():
-        print(line)
+        line
     
     print(f'Part 1: {result}')
 
@@ -14,7 +14,7 @@ def Part2(input):
     result = 0
 
     for line in input.splitlines():
-        print(line)
+        line
     
     print(f'Part 2: {result}')
 

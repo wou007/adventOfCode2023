@@ -1,6 +1,6 @@
 import os
 
-day_number = 0
+day_number = 1
 
 def Part1(input):
     result = 0
@@ -8,7 +8,7 @@ def Part1(input):
     for line in input.splitlines():
         line
     
-    print(f'Part 1: {result}')
+    return result
 
 def Part2(input):
     result = 0
@@ -16,7 +16,7 @@ def Part2(input):
     for line in input.splitlines():
         line
     
-    print(f'Part 2: {result}')
+    return result
 
 def ReadInput():
     filePath = ''
@@ -34,8 +34,8 @@ def ReadInput():
 def Run():
     print(f'Day {day_number}')
     input = ReadInput()
-    Part1(input)
-    Part2(input)
+    print(f'Part 1: {Part1(input)}')
+    print(f'Part 2: {Part2(input)}')
 
 if __name__ == "__main__":
     Run()

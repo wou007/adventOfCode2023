@@ -5,9 +5,6 @@ import HelperFunctions
 import Day1.Day1 as Day1
 
 if __name__ == "__main__":
-
-    HelperFunctions.Print2dList(HelperFunctions.Create2DList(3,4))
-
     days = [Day1]
     
     for d in days:

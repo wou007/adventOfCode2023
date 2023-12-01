@@ -2,7 +2,7 @@ import time
 
 import HelperFunctions
 
-import Day1.Day1 as Day1
+import Day1
 
 if __name__ == "__main__":
     days = [Day1]

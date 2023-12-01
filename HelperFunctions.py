@@ -13,12 +13,6 @@ def ReadInput(day_number):
 
     return data
 
-def InputToIntArray(input):
-    result = []
-    for i in input:
-        result.append(int(i))
-    return result
-
 def Create2DList(width,height,initValue = 0):
     result = []
     for i in range(height):

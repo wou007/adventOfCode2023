@@ -18,10 +18,3 @@ def Create2DList(width,height,initValue = 0):
     for i in range(height):
         result.append([initValue for j in range(width)])
     return result
-
-def Print2dList(list):
-    for row in list:
-        txt = ''
-        for point in row:
-            txt = txt + str(point)
-        print(txt)

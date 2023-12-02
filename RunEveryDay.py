@@ -3,9 +3,10 @@ import time
 import HelperFunctions
 
 import Day1
+import Day2
 
 if __name__ == "__main__":
-    days = [Day1]
+    days = [Day1, Day2]
     
     for d in days:
         input = HelperFunctions.ReadInput(d.day_number)

@@ -7,7 +7,7 @@ def Part1(input):
     result = 0
 
     for line in input.splitlines():
-        result += int(re.sub("\D","",line)[0] + re.sub("\D","",line)[-1])
+        result += int(re.sub(r"\D","",line)[0] + re.sub(r"\D","",line)[-1])
     
     return result
 
@@ -25,7 +25,7 @@ def Part2(input):
         line = re.sub("eight", "e8t", line)
         line = re.sub("nine", "n9e", line)
         
-        result += int(re.sub("\D","",line)[0] + re.sub("\D","",line)[-1])
+        result += int(re.sub(r"\D","",line)[0] + re.sub(r"\D","",line)[-1])
     
     return result
 

@@ -13,7 +13,7 @@ class Matrix():
     def FromInput(self, input):
         self.matrix = []
         
-        for line in input:
+        for line in input.splitlines():
             temp = []
             for c in line:
                 temp.append(c)
@@ -32,8 +32,8 @@ class Matrix():
 
     def IsCoordinateValid(self, x, y):
         result = False
-        if  y >= 0:
-            if x >= 0:
+        if  y >= 0 and y < self.GetHeight():
+            if x >= 0 and x < self.GetWidth():
                 result = True
         return result
 

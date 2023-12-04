@@ -42,8 +42,44 @@ def Part1(input):
 def Part2(input):
     result = 0
 
-    for line in input.splitlines():
-        line
+    m = Matrix.Matrix()
+    m.FromInput(input)
+
+    gearsWithNumbers = {}
+
+    for row in range(m.GetHeight()):
+        number = ''
+        startFound = False
+        gearFound = None
+        for c in range(m.GetWidth()):
+            if m.GetPixel(c,row) in numbers:
+                number += m.GetPixel(c,row)
+                startFound = True
+                for n in m.GetNeighborsOf(c,row,True):
+                    if m.GetPixel(n[0],n[1]) == '*':
+                        gearFound = n
+            elif startFound:
+                if gearFound != None:
+                    if str(gearFound) in gearsWithNumbers:
+                        gearsWithNumbers[str(gearFound)].append(int(number))
+                    else:
+                        gearsWithNumbers[str(gearFound)] = [int(number)]
+                number = ''
+                gearFound = None
+                startFound = False
+        if startFound:
+            if gearFound != None:
+                if str(gearFound) in gearsWithNumbers:
+                    gearsWithNumbers[str(gearFound)].append(int(number))
+                else:
+                    gearsWithNumbers[str(gearFound)] = [int(number)]
+            number = ''
+            gearFound = None
+            startFound = False
+
+    for key, value in gearsWithNumbers.items():
+        if len(value) == 2:
+            result += value[0] * value[1]
     
     return result
 

@@ -18,12 +18,14 @@ def Part1(input):
         startFound = False
         symbolFound = False
         for c in range(m.GetWidth()):
-            if m.GetPixel(c,row) in numbers:
-                number += m.GetPixel(c,row)
+            val = m.GetPixel(c,row)
+            if val in numbers:
+                number += val
                 startFound = True
-                for n in m.GetNeighborsOf(c,row,True):
-                    if m.GetPixel(n[0],n[1]) not in notSymbols:
-                        symbolFound = True
+                if not symbolFound:
+                    for n in m.GetNeighborsOf(c,row,True):
+                        if m.GetPixel(n[0],n[1]) not in notSymbols:
+                            symbolFound = True
             elif startFound:
                 if symbolFound:
                     result += int(number)
@@ -52,12 +54,14 @@ def Part2(input):
         startFound = False
         gearFound = None
         for c in range(m.GetWidth()):
-            if m.GetPixel(c,row) in numbers:
-                number += m.GetPixel(c,row)
+            val = m.GetPixel(c,row)
+            if val in numbers:
+                number += val
                 startFound = True
-                for n in m.GetNeighborsOf(c,row,True):
-                    if m.GetPixel(n[0],n[1]) == '*':
-                        gearFound = n
+                if gearFound == None:
+                    for n in m.GetNeighborsOf(c,row,True):
+                        if m.GetPixel(n[0],n[1]) == '*':
+                            gearFound = n
             elif startFound:
                 if gearFound != None:
                     if str(gearFound) in gearsWithNumbers:

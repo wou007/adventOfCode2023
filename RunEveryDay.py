@@ -4,10 +4,14 @@ import HelperFunctions
 
 import Day1
 import Day2
+import Day3
+import Day4
 
 if __name__ == "__main__":
-    days = [Day1, Day2]
+    days = [Day1, Day2, Day3, Day4]
     
+    totalStart = time.time()
+
     for d in days:
         input = HelperFunctions.ReadInput(d.day_number)
 
@@ -25,3 +29,5 @@ if __name__ == "__main__":
             print(f'    Duration part 2 {round(part2Time,3)}s       Answer: {result2}\n')
         else:
             print(f'Day {d.day_number} NO INPUT\n')
+
+    print(f'Total Time: {round(time.time() - totalStart,3)}s')

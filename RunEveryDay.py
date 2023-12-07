@@ -14,7 +14,7 @@ if __name__ == "__main__":
     days = [Day1, Day2, Day3, Day4, Day6, Day7]
     
     totalStart = time.time()
-
+    totalTime = 0
     for d in days:
         input = HelperFunctions.ReadInput(d.day_number)
 
@@ -30,7 +30,9 @@ if __name__ == "__main__":
             print(f'Day {d.day_number}') 
             print(f'    Duration part 1 {round(part1Time,3)}s\tAnswer: {result1}')
             print(f'    Duration part 2 {round(part2Time,3)}s\tAnswer: {result2}\n')
+
+            totalTime += part1Time + part2Time
         else:
             print(f'Day {d.day_number} NO INPUT\n')
 
-    print(f'Total Time: {round(time.time() - totalStart,3)}s')
+    print(f'Total Time: {round(time.time() - totalStart,3)} without IO: {round(totalTime,3)}s')

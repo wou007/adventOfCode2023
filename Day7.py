@@ -81,6 +81,8 @@ class Hand2():
                 tempHand = hand
                 tempHand = tempHand.replace('J',c,1)
                 tempScore = max(self.GetScore(tempHand),tempScore)
+                if tempScore == 7:
+                    break
             return tempScore
         else:
             counts = {e:hand.count(e) for e in set(hand)}

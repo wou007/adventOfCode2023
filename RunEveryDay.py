@@ -7,9 +7,11 @@ import Day2
 import Day3
 import Day4
 import Day5 # ignore for now
+import Day6
+import Day7
 
 if __name__ == "__main__":
-    days = [Day1, Day2, Day3, Day4]
+    days = [Day1, Day2, Day3, Day4, Day6, Day7]
     
     totalStart = time.time()
 

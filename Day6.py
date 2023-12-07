@@ -15,9 +15,10 @@ def Part1(input):
         wins = 0
         time = int(times[i])
         distance = int(distances[i])
-        for s in range(time):
+        for s in range((round(distance/time)),time):
             if s * (time - s) > distance:
-                wins += 1
+                wins = time - (s * 2)
+                break
         result *= wins
 
     
@@ -35,9 +36,10 @@ def Part2(input):
         wins = 0
         time = int(times[i])
         distance = int(distances[i])
-        for s in range(time):
+        for s in range((round(distance/time)),time):
             if s * (time - s) > distance:
-                wins += 1
+                wins = time - (s * 2)
+                break
         result *= wins
 
     

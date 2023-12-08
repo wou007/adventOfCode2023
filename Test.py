@@ -1,9 +1,21 @@
+import BFS
 import Matrix
 
 if __name__ == "__main__":
     matrix = Matrix.Matrix()
-    matrix.Generate(5,5,'H')
-    matrix.SetPixel(2,1,'A')
-    matrix.SetPixel(3,3,'A')
-    print(matrix.GetPixelsWithValue('A'))
-    matrix.Print()
+    matrix.FromInput(   "#######\n"+
+                        "#S....#\n"+
+                        "###...#\n"+
+                        "#.....#\n"+
+                        "#.#####\n"+
+                        "#.....#\n"+
+                        "###...#\n"+
+                        "#.....#\n"+
+                        "###...#\n"+
+                        "#E....#\n"+
+                        "#######\n")
+    bfs = BFS.BFS()
+    bfs.SetMap(matrix)
+    bfs.SetStartPixelByValue('S')
+    bfs.SetEndValue('E')
+    print(bfs.CalculateShortestPath())

@@ -34,9 +34,26 @@ def Part1(input):
 def Part2(input):
     result = 0
 
+    results = []
+
     for line in input.splitlines():
-        line
+        numbers = []
+        numbers.append([int(n) for n in re.findall(r"(-?\d+)",line)])
+
+        while len(numbers[-1]) != numbers[-1].count(0):
+            newLine = []
+            currLine = numbers[-1]
+            for i in range(1, len(currLine)):
+                newLine.append(currLine[i]-currLine[i-1])
+            numbers.append(newLine)
+
+        for l in range(len(numbers) - 1,-1, -1):
+            numbers[l-1].insert(0,numbers[l - 1][0] - numbers[l][0])
+
+        results.append(numbers[0][0])
     
+    result = sum(results)
+
     return result
 
 if __name__ == "__main__":
